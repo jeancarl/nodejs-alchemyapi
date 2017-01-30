@@ -33,6 +33,8 @@ app.get("/news", function (req, res) {
 
   var params = {
     maxResults: req.query.hasOwnProperty("max") ? req.query.max : 10,
+    start: req.query.hasOwnProperty("start") ? req.query.start : "now-1d",
+  	end: req.query.hasOwnProperty("end") ? req.query.end : "now",    
     return: fields.join(",")
   };
 
